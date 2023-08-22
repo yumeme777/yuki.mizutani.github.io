@@ -86,3 +86,31 @@ function scroll_event() {
   addEventListener("resize", switchViewport, false);
   switchViewport();
 })();
+
+// スクロールしたらフェードイン
+const animateFade = (entries, obs) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      // console.log(entry.target);
+      entry.target.animate(
+        {
+          opacity: [0, 1],
+          translate: ["0 4rem", 0],
+        },
+        {
+          duration: 2000,
+          easing: "ease",
+          fill: "forwards",
+        }
+      );
+      obs.unobserve(entry.target);
+    }
+  });
+};
+
+const fadeObserver = new IntersectionObserver(animateFade);
+
+const fadeElements = document.querySelectorAll(".js_fadeIn");
+fadeElements.forEach((fadeElement) => {
+  fadeObserver.observe(fadeElement);
+});
