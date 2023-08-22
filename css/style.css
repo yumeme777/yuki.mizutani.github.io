@@ -333,11 +333,10 @@ html {
 
 @media screen and (min-width: 1080px) {
   .l_footer {
-    position: static;
     height: 120px;
+    position: static;
   }
 }
-
 /* ------------------------- */
 /* --------- module -------- */
 /* ------------------------- */
@@ -514,15 +513,15 @@ html {
 
 @media screen and (min-width: 1080px) {
   .mv {
-    background: url(../img/yuki_circle.png) no-repeat center center/400px 400px;
+    background: url(../img/yuki_circle.png) no-repeat center center/350px 350px;
     height: calc(100vh - 100px);
   }
   .mv_content-name {
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: bold;
   }
   .mv_content-txt {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 }
 /* --------------------------- */
@@ -664,7 +663,9 @@ html {
 
 .about_description {
   line-height: 2.2;
+  font-size: clamp(1rem, 4.2vw, 1.2rem);
 }
+
 .about_description-span {
   background-color: var(--accent-color);
   color: var(--white-color);
@@ -723,18 +724,14 @@ html {
   }
 
   .about_name {
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: bold;
   }
 
   .about_copy {
     margin-top: 0px;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     white-space: nowrap;
-  }
-
-  .about_profile-text {
-    font-size: 1.2rem;
   }
 
   .about_button {
@@ -743,10 +740,13 @@ html {
 }
 
 @media screen and (min-width: 1080px) {
+  .about_yuki-img {
+    width: 220px;
+  }
   .about_profile {
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-start;
     gap: 56px;
     margin-top: 0;
   }
@@ -767,6 +767,35 @@ html {
   .about_profile-text {
     margin-top: 0px;
   }
+
+  .about_button {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .about_profile {
+    align-items: center;
+    gap: 80px;
+  }
+  .about_yuki-img {
+    width: 280px;
+  }
+  .about_description {
+    font-size: 1.3rem;
+  }
+  .about_job {
+    font-size: 1.5rem;
+  }
+
+  .about_name {
+    font-size: 2.1rem;
+  }
+
+  .about_copy {
+    margin-top: 0px;
+    font-size: 1.5rem;
+  }
 }
 
 /* ----------------------------- */
@@ -775,6 +804,7 @@ html {
 .contact_content {
   line-height: 2.2;
   text-align: center;
+  font-size: clamp(1rem, 4.2vw, 1.1rem);
 }
 
 /* form  */
@@ -789,7 +819,7 @@ form {
 }
 
 .form_content {
-  font-size: 1rem;
+  font-size: clamp(1rem, 4.2vw, 1.1rem);
   font-weight: bold;
 }
 
@@ -841,17 +871,9 @@ input:-webkit-autofill {
 }
 
 @media screen and (min-width: 768px) {
-  .contact_content {
-    font-size: 1.2rem;
-  }
-
   .contact_content br {
     display: none;
   }
-  .form_content {
-    font-size: 1.2rem;
-  }
-
   .form_submit-wrapper {
     display: flex;
     justify-content: center;
@@ -885,7 +907,7 @@ input:-webkit-autofill {
 
 .thanks_content {
   margin-top: 2rem;
-  font-size: clamp(1rem, 4.2vw, 1.3rem);
+  font-size: clamp(1rem, 4.2vw, 1.2rem);
 }
 
 .thanks_img {
