@@ -483,7 +483,7 @@ html {
 /* ------------------------------ */
 .mv {
   background: url(../img/yuki_circle.png) no-repeat center center/300px 300px;
-  height: calc((var(--vh, 1vh) * 100) - 160px);
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 .mv_inner {
