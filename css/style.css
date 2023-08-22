@@ -47,7 +47,6 @@ html {
   position: fixed;
   inset: 0;
   z-index: 9999;
-
   place-items: center;
 }
 
@@ -60,7 +59,7 @@ html {
 }
 
 #loading p {
-  font-size: 5rem;
+  font-size: clamp(4rem, 17vw, 4rem);
   font-weight: bold;
   font-family: "Vujahday Script", cursive;
   color: var(--brown-color);
@@ -250,14 +249,9 @@ html {
   padding-bottom: 96px;
 }
 
-@media screen and (min-width: 768px) {
-  .l_contents {
-    padding-bottom: 192px;
-  }
-}
-
 /*  l_header */
 .l_header {
+  background-color: var(--brown-color);
   position: sticky;
   top: 0;
   left: 0;
@@ -268,11 +262,16 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: clamp(1rem, 4.2vw, 2rem) clamp(1.5rem, 6.4vw, 3.5rem) 0;
+  padding: 1rem clamp(1.5rem, 6.4vw, 3.5rem);
 }
 
 .l_header-logo {
   width: clamp(3rem, 12.8vw, 4.5rem);
+}
+
+.l_header-logo_icon {
+  border-radius: 50%;
+  box-shadow: 0 0 1px var(--white-color);
 }
 
 .l_header-nav_list {
@@ -283,8 +282,8 @@ html {
 }
 
 .l_header-nav_item {
-  font-size: clamp(0.7rem, 2.9vw, 1.5rem);
-  color: var(--brown-color);
+  font-size: clamp(0.8rem, 2.9vw, 1.5rem);
+  color: var(--white-color);
   font-weight: bold;
   font-family: "Vujahday Script", cursive;
 }
@@ -335,12 +334,7 @@ html {
 @media screen and (min-width: 1080px) {
   .l_footer {
     position: static;
-    height: 160px;
-    padding: 2rem;
-  }
-
-  .l_footer_copyright {
-    margin-top: 1rem;
+    height: 120px;
   }
 }
 
@@ -355,10 +349,7 @@ html {
   font-family: "Vujahday Script", cursive;
   font-size: clamp(4rem, 17vw, 6rem);
   font-weight: bold;
- 
 }
-
-
 
 /* sns footer */
 .m_sns_link-wrapper {
@@ -369,13 +360,16 @@ html {
 }
 
 .m_sns-icon {
-  width: 32px;
+  width: 40px;
   display: block;
 }
 
 @media screen and (min-width: 1080px) {
+  .m_sns_link-wrapper {
+    gap: 32px;
+  }
   .m_sns-icon {
-    width: 40px;
+    width: 48px;
   }
   .m_sns-icon:hover {
     opacity: 0.7;
@@ -392,12 +386,12 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   transition: 0.3s;
   background: var(--accent-color);
-  z-index: var(--z-index-default);
+  z-index: var(--z-index-modal);
   box-shadow: 0 0 10px var(--brown-color);
   /*   デフォルトは非表示 */
   /* opacity: 0; */
@@ -405,8 +399,8 @@ html {
 
 .m_pagetop_button::before {
   content: "";
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
   border-top: 2px solid var(--white-color);
   border-left: 2px solid var(--white-color);
   transform: rotate(45deg);
@@ -422,14 +416,28 @@ html {
 }
 
 /* button */
+.m_button {
+  position: relative;
+}
+
+.m_button::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid var(--white-color);
+  border-right: 2px solid var(--white-color);
+  transform: rotate(45deg) translateY(-50%);
+  position: absolute;
+  top: 50%;
+  right: 10%;
+}
 .m_button_link {
   background-color: var(--brown-color);
   color: var(--white-color);
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   width: 100%;
-  height: 56px;
-  border-radius: 10px;
+  height: 70px;
   letter-spacing: 0.5rem;
   display: flex;
   justify-content: center;
@@ -442,6 +450,7 @@ html {
 .m_button_link::after {
   content: "";
   margin-left: -0.5rem;
+  display: block;
 }
 
 @media screen and (min-width: 768px) {
@@ -460,6 +469,7 @@ html {
   }
   .m_button_link::after {
     content: "";
+    display: block;
     margin-left: -1rem;
   }
 }
@@ -519,10 +529,6 @@ html {
 /* --------------------------- */
 /* ---------- works ---------- */
 /* --------------------------- */
-.works {
-  margin-top: 88px;
-}
-
 .works_list {
   display: flex;
   justify-content: center;
@@ -541,15 +547,29 @@ html {
   margin-top: 8px;
 }
 
-.works_item_company-name {
+.works_item_channel-name{
   font-size: clamp(1rem, 4.2vw, 1.2rem);
   color: var(--brown-color);
   font-weight: bold;
 }
 
-/* .works_item_credit {
-  font-size: clamp(0.3rem, 4.2vw, 0.5rem);
-} */
+.works_item_link {
+  width: 100%;
+}
+
+.works_button {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 400px;
+}
+
+.works_button:first-of-type {
+  margin-top: 80px;
+}
+
+.works_button:not(:first-of-type) {
+  margin-top: 32px;
+}
 
 @media screen and (min-width: 500px) {
   iframe {
@@ -559,9 +579,6 @@ html {
 }
 
 @media screen and (min-width: 768px) {
-  .works {
-    margin-top: 192px;
-  }
   .works_list {
     align-items: flex-start;
     flex-direction: row;
@@ -570,6 +587,21 @@ html {
 
   .works_item:not(:first-child) {
     margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 856px) {
+  .works_button {
+    max-width: 824px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .works_item_link:hover {
+    opacity: 0.7;
   }
 }
 
@@ -582,7 +614,7 @@ html {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 32px;
+  margin-top: 16px;
 }
 
 .about_yuki-img {
@@ -623,8 +655,14 @@ html {
   background-color: var(--accent-color);
   color: var(--white-color);
   font-weight: bold;
-  padding: 5px;
+  width: 30px;
+  height: 30px;
   border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  
 }
 
 .about_current {
@@ -632,8 +670,25 @@ html {
   display: block;
 }
 
-.about_button-wrapper {
-  margin-top: 54px;
+.about_yuki-img {
+  position: relative;
+  z-index: var(--z-index-default);
+}
+
+.about_yuki-img::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: var(--brown-color);
+  z-index: var(--z-index-back);
+  border-radius: 20px;
+  position: absolute;
+  top: -13px;
+  right: -13px;
+}
+
+.about_button {
+  margin-top: 32px;
 }
 
 @media screen and (min-width: 500px) {
@@ -668,13 +723,17 @@ html {
   .about_profile-text {
     font-size: 1.2rem;
   }
+
+  .about_button {
+    margin-top: 56px;
+  }
 }
 
 @media screen and (min-width: 1080px) {
   .about_profile {
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: flex-end;
     gap: 56px;
     margin-top: 0;
   }
@@ -746,7 +805,6 @@ input:-webkit-autofill {
 .form_email-area,
 .form_message-area {
   border: 3px solid var(--brown-color);
-  border-radius: 10px;
   padding: 8px;
   margin-top: 8px;
   width: 100%;
