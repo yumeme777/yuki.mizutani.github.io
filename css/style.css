@@ -484,7 +484,7 @@ html {
 .mv {
   background: url(../img/yuki_circle.png) no-repeat center center/300px 300px;
   height: calc(100vh - 160px);
-  min-height: -webkit-fill-available;
+ 
 }
 
 .mv_inner {
