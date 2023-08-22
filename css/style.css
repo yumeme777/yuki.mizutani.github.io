@@ -455,7 +455,7 @@ html {
 
 @media screen and (min-width: 768px) {
   .m_button_link {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -547,7 +547,7 @@ html {
   margin-top: 8px;
 }
 
-.works_item_channel-name{
+.works_item_channel-name {
   font-size: clamp(1rem, 4.2vw, 1.2rem);
   color: var(--brown-color);
   font-weight: bold;
@@ -571,6 +571,12 @@ html {
   margin-top: 32px;
 }
 
+.works_button_link {
+  letter-spacing: 0.1em;
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
 @media screen and (min-width: 500px) {
   iframe {
     width: 400px;
@@ -588,6 +594,10 @@ html {
   .works_item:not(:first-child) {
     margin-top: 0;
   }
+  .works_button_link {
+    letter-spacing: 0.1em;
+    font-size: 1.5rem;
+  }
 }
 
 @media screen and (min-width: 856px) {
@@ -596,6 +606,11 @@ html {
     width: 100%;
     margin-right: auto;
     margin-left: auto;
+  }
+  .works_button_link {
+    letter-spacing: 0.3em;
+    font-size: 2rem;
+    margin-right: 1rem;
   }
 }
 
@@ -662,7 +677,6 @@ html {
   align-items: center;
   justify-content: center;
   position: relative;
-  
 }
 
 .about_current {
