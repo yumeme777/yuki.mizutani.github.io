@@ -116,7 +116,11 @@ fadeElements.forEach((fadeElement) => {
 });
 
 // 高さ
-window.addEventListener("resize", () => {
+function adjustHeight() {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
-});
+}
+
+// 初回実行とリサイズ時に高さ調整関数を呼ぶ
+window.addEventListener("DOMContentLoaded", adjustHeight);
+window.addEventListener("resize", adjustHeight);
