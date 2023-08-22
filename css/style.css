@@ -485,6 +485,8 @@ html {
   background: url(../img/yuki_circle.png) no-repeat center center/300px 300px;
   /* headerの高さ66とfooterの高さ100ひいてる */
   height: calc(100vh - 160px);
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 .mv_inner {
@@ -828,6 +830,10 @@ input:-webkit-autofill {
 .form_email-area,
 .form_message-area:focus {
   outline: none;
+}
+
+.form_textarea {
+  overflow: scroll;
 }
 
 .form_submit-wrapper {
