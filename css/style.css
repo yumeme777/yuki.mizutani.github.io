@@ -383,9 +383,6 @@ html {
   position: fixed;
   right: 30px;
   bottom: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -403,7 +400,10 @@ html {
   height: 15px;
   border-top: 2px solid var(--white-color);
   border-left: 2px solid var(--white-color);
-  transform: rotate(45deg);
+  transform: translate(-50%, -30%) rotate(45deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
 @media screen and (min-width: 1080px) {
